@@ -9,9 +9,9 @@ def get_swagger_ui_html(
     *,
     openapi_url: str,
     title: str,
-    swagger_js_url: str = "https://cdn.jsdelivr.net/npm/swagger-ui-dist@3/swagger-ui-bundle.js",
-    swagger_css_url: str = "https://cdn.jsdelivr.net/npm/swagger-ui-dist@3/swagger-ui.css",
-    swagger_favicon_url: str = "https://fastapi.tiangolo.com/img/favicon.png",
+    swagger_js_url: str = "./assets/swagger-ui-dist@3/swagger-ui-bundle.js",
+    swagger_css_url: str = "./assets/swagger-ui-dist@3/swagger-ui.css",
+    swagger_favicon_url: str = "./assets/img/favicon.png",
     oauth2_redirect_url: Optional[str] = None,
     init_oauth: Optional[dict] = None,
 ) -> HTMLResponse:
@@ -66,8 +66,8 @@ def get_redoc_html(
     *,
     openapi_url: str,
     title: str,
-    redoc_js_url: str = "https://cdn.jsdelivr.net/npm/redoc@next/bundles/redoc.standalone.js",
-    redoc_favicon_url: str = "https://fastapi.tiangolo.com/img/favicon.png",
+    redoc_js_url: str = "./assets/redoc@next/bundles/redoc.standalone.js",
+    redoc_favicon_url: str = "./assets/img/favicon.png",
     with_google_fonts: bool = True,
 ) -> HTMLResponse:
     html = f"""
@@ -81,7 +81,7 @@ def get_redoc_html(
     """
     if with_google_fonts:
         html += """
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700" rel="stylesheet">
+    <link href="http://static-content01.avid.sac.gov.in/fonts/roboto/roboto.css"" rel="stylesheet">
     """
     html += f"""
     <link rel="shortcut icon" href="{redoc_favicon_url}">
